@@ -1,304 +1,304 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site de Plotagens</title>
-    <!-- Ícones de redes sociais (Font Awesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site de Plotagens</title>
+  <!-- Ícones de redes sociais (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* ESTILOS GERAIS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <style>
+    /* ESTILOS GERAIS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: #0b0b0b;
-            color: #ffffff;
-            min-height: 100vh;
-            margin: 0;
-        }
+    body {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      min-height: 100vh;
+      margin: 0;
+    }
 
-        .main-container {
-            min-height: 100vh;
-            /* TROQUE 'SUA_IMAGEM_DE_FUNDO.jpg' PELO NOME EXATO DO ARQUIVO DA IMAGEM NO GITHUB */
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('S20260725_183710_0000.png') no-repeat center center/cover;
-            display: fl
-            justify-content: center;
-            align-items: center;
-            padding: 20px 10px;
-        }
+    .main-container {
+      min-height: 100vh;
+      /* TROQUE 'SUA_IMAGEM_DE_FUNDO.jpg' PELO NOME EXATO DO ARQUIVO DA IMAGEM NO GITHUB */
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('S20260725_183710_0000.png') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 10px;
+    }
 
-        /* CONTROLE DE PÁGINAS */
-        .page {
-            display: none;
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
+    /* CONTROLE DE PÁGINAS */
+    .page {
+      display: none;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
 
-        .page.active-page {
-            display: block;
-        }
+    .page.active-page {
+      display: block;
+    }
 
-        .content {
-            padding: 20px 10px;
-        }
+    .content {
+      padding: 20px 10px;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
 
-        p {
-            color: #ccc;
-            margin-bottom: 25px;
-            font-size: 1rem;
-        }
+    p {
+      color: #ccc;
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
 
-        /* BOTÕES SOCIAIS */
-        .social-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 20px;
-            align-items: center;
-        }
+    /* BOTÕES SOCIAIS */
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
 
-        .btn-social {
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            max-width: 280px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            transition: transform 0.2s;
-        }
+    .btn-social {
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+    }
 
-        .btn-social:active {
-            transform: scale(0.98);
-        }
+    .btn-social:active {
+      transform: scale(0.98);
+    }
 
-        .btn-youtube {
-            background-color: #ff0000;
-            color: #ffffff;
-        }
+    .btn-youtube {
+      background-color: #ff0000;
+      color: #ffffff;
+    }
 
-        .btn-tiktok {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-        }
+    .btn-tiktok {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
 
-        /* BOTÃO PRINCIPAL E DE VOLTAR */
-        .btn {
-            display: inline-block;
-            background-color: #e50914;
-            color: #ffffff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.5);
-            width: 100%;
-            max-width: 280px;
-        }
+    /* BOTÃO PRINCIPAL E DE VOLTAR */
+    .btn {
+      display: inline-block;
+      background-color: #e50914;
+      color: #ffffff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(229, 9, 20, 0.5);
+      width: 100%;
+      max-width: 280px;
+    }
 
-        .btn-back {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 8px 18px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
-        }
+    .btn-back {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 8px 18px;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+    }
 
-        /* ITEM DA PLOTAGEM */
-        .plot-item {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-        }
+    /* ITEM DA PLOTAGEM */
+    .plot-item {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(5px);
+    }
 
-        .car-preview {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            display: block;
-        }
+    .car-preview {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: block;
+    }
 
-        .code-container {
-            margin-bottom: 12px;
-            text-align: left;
-        }
+    .code-container {
+      margin-bottom: 12px;
+      text-align: left;
+    }
 
-        .code-container label {
-            display: block;
-            font-size: 0.85rem;
-            color: #aaa;
-            margin-bottom: 4px;
-        }
+    .code-container label {
+      display: block;
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
 
-        textarea {
-            width: 100%;
-            height: 40px;
-            background: #111;
-            border: 1px solid #333;
-            color: #00ff66;
-            padding: 8px;
-            border-radius: 6px;
-            resize: none;
-            font-family: monospace;
-            font-size: 0.8rem;
-        }
+    textarea {
+      width: 100%;
+      height: 40px;
+      background: #111;
+      border: 1px solid #333;
+      color: #00ff66;
+      padding: 8px;
+      border-radius: 6px;
+      resize: none;
+      font-family: monospace;
+      font-size: 0.8rem;
+    }
 
-        .copy-btn {
-            width: 100%;
-            margin-top: 5px;
-            padding: 8px;
-            background-color: #222;
-            color: #fff;
-            border: 1px solid #444;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    .copy-btn {
+      width: 100%;
+      margin-top: 5px;
+      padding: 8px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-        .copy-btn:active {
-            background-color: #00ff66;
-            color: #000;
-        }
-    </style>
+    .copy-btn:active {
+      background-color: #00ff66;
+      color: #000;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- CONTAINER COM O FUNDO DO CARRO -->
-    <div class="main-container">
+  <!-- CONTAINER COM O FUNDO DO CARRO -->
+  <div class="main-container">
 
-        <!-- PÁGINA 1: BOAS-VINDAS -->
-        <section id="welcome-page" class="page active-page">
-            <div class="overlay">
-                <div class="content">
-                    <h1>salve tropa ✌️</h1>
-                    <p>Explore as melhores plotagens e códigos para seus carros.</p>
+    <!-- PÁGINA 1: BOAS-VINDAS -->
+    <section id="welcome-page" class="page active-page">
+      <div class="overlay">
+        <div class="content">
+          <h1>Salve tropa ✌️</h1>
+          <p>Explore as melhores plotagens e códigos para seus carros.</p>
 
-                    <!-- Botões Sociais -->
-                    <div class="social-buttons">
-                        <a href="https://www.youtube.com/@RedSans00215" target="_blank" class="btn-social btn-youtube">
-                            <i class="fab fa-youtube"></i> Canal do YouTube
-                        </a>
+          <!-- Botões Sociais -->
+          <div class="social-buttons">
+            <a href="https://www.youtube.com/@EdSans00215" target="_blank" class="btn-social btn-youtube">
+              <i class="fab fa-youtube"></i> Canal do YouTube
+            </a>
 
-                        <a href="https://www.tiktok.com/@souzx_44215" target="_blank" class="btn-social btn-tiktok">
-                            <i class="fab fa-tiktok"></i> Perfil do TikTok
-                        </a>
-                    </div>
+            <a href="https://www.tiktok.com/@souza_44215" target="_blank" class="btn-social btn-tiktok">
+              <i class="fab fa-tiktok"></i> Perfil do TikTok
+            </a>
+          </div>
 
-                    <!-- Botão de ir para as plotagens -->
-                    <a href="#plot-page" class="btn" id="go-to-plots">Área das Plotagens</a>
-                </div>
+          <!-- Botão de ir para as plotagens -->
+          <a href="#plot-page" class="btn" id="go-to-plots">Área das Plotagens</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 2: ÁREA DAS PLOTAGENS -->
+    <section id="plot-page" class="page">
+      <div class="overlay">
+        <div class="content">
+          <h2>Área das Plotagens</h2>
+          <a href="#welcome-page" class="btn-back" id="back-to-home">Voltar</a>
+
+          <!-- Plotagem 1 -->
+          <div class="plot-item">
+            <img src="20260725_174843_0000.png" alt="Plotagem Carro 1" class="car-preview">
+            <div class="code-boxes">
+              <div class="code-container">
+                <label>Corpo do Carro</label>
+                <textarea readonly onclick="this.select()">CÓDIGO_CORPO_CARRO_1</textarea>
+                <button class="copy-btn">Copiar</button>
+              </div>
+              <div class="code-container">
+                <label>Vidro do Carro</label>
+                <textarea readonly onclick="this.select()">CÓDIGO_VIDRO_CARRO_1</textarea>
+                <button class="copy-btn">Copiar</button>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- PÁGINA 2: ÁREA DAS PLOTAGENS -->
-        <section id="plot-page" class="page">
-            <div class="overlay">
-                <div class="content">
-                    <h2>Área das Plotagens</h2>
-                    <a href="#welcome-page" class="btn-back" id="back-to-home">Voltar</a>
-
-                    <!-- Plotagem 1 -->
-                    <div class="plot-item">
-                        <img src="20260725_174843_0000.png" alt="Plotagem Carro 1" class="car-preview">
-                        <div class="code-boxes">
-                            <div class="code-container">
-                                <label>Corpo do Carro</label>
-                                <textarea readonly onclick="this.select()">CÓDIGO_CORPO_CARRO_1</textarea>
-                                <button class="copy-btn">Copiar</button>
-                            </div>
-                            <div class="code-container">
-                                <label>Vidro do Carro</label>
-                                <textarea readonly onclick="this.select()">CÓDIGO_VIDRO_CARRO_1</textarea>
-                                <button class="copy-btn">Copiar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plotagem 2 -->
-                    <div class="plot-item">
-                        <img src="20260725_181223_0000.png" alt="Plotagem Carro 2" class="car-preview">
-                        <div class="code-boxes">
-                            <div class="code-container">
-                                <label>Corpo do Carro</label>
-                                <textarea readonly onclick="this.select()">CÓDIGO_CORPO_CARRO_2</textarea>
-                                <button class="copy-btn">Copiar</button>
-                            </div>
-                            <div class="code-container">
-                                <label>Vidro do Carro</label>
-                                <textarea readonly onclick="this.select()">CÓDIGO_VIDRO_CARRO_2</textarea>
-                                <button class="copy-btn">Copiar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+          <!-- Plotagem 2 -->
+          <div class="plot-item">
+            <img src="20260725_181223_0000.png" alt="Plotagem Carro 2" class="car-preview">
+            <div class="code-boxes">
+              <div class="code-container">
+                <label>Corpo do Carro</label>
+                <textarea readonly onclick="this.select()">CÓDIGO_CORPO_CARRO_2</textarea>
+                <button class="copy-btn">Copiar</button>
+              </div>
+              <div class="code-container">
+                <label>Vidro do Carro</label>
+                <textarea readonly onclick="this.select()">CÓDIGO_VIDRO_CARRO_2</textarea>
+                <button class="copy-btn">Copiar</button>
+              </div>
             </div>
-        </section>
+          </div>
 
-    </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Script para navegar entre a tela de início e as plotagens -->
-    <script>
-        const welcomePage = document.getElementById('welcome-page');
-        const plotPage = document.getElementById('plot-page');
-        const goToPlotsBtn = document.getElementById('go-to-plots');
-        const backToHomeBtn = document.getElementById('back-to-home');
+  </div>
 
-        goToPlotsBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            welcomePage.classList.remove('active-page');
-            plotPage.classList.add('active-page');
-        });
+  <!-- Script para navegar entre a tela de início e as plotagens -->
+  <script>
+    const welcomePage = document.getElementById('welcome-page');
+    const plotPage = document.getElementById('plot-page');
+    const goToPlotsBtn = document.getElementById('go-to-plots');
+    const backToHomeBtn = document.getElementById('back-to-home');
 
-        backToHomeBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            plotPage.classList.remove('active-page');
-            welcomePage.classList.add('active-page');
-        });
+    goToPlotsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      welcomePage.classList.remove('active-page');
+      plotPage.classList.add('active-page');
+    });
 
-        // Botão de copiar
-        const copyButtons = document.querySelectorAll('.copy-btn');
-        copyButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const textarea = this.previousElementSibling;
-                textarea.select();
-                document.execCommand('copy');
-                this.innerText = 'Copiado!';
-                setTimeout(() => {
-                    this.innerText = 'Copiar';
-                }, 2000);
-            });
-        });
-    </script>
+    backToHomeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      plotPage.classList.remove('active-page');
+      welcomePage.classList.add('active-page');
+    });
+
+    // Botão de copiar
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    copyButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const textarea = this.previousElementSibling;
+        textarea.select();
+        document.execCommand('copy');
+        this.innerText = 'Copiado!';
+        setTimeout(() => {
+          this.innerText = 'Copiar';
+        }, 2000);
+      });
+    });
+  </script>
 </body>
 </html>
